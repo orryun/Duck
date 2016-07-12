@@ -37,5 +37,6 @@ def search(connection, search_value, search_type):
                     "_all": {}
                 }
             }
-        })    return result
+        })
+    return result
 
