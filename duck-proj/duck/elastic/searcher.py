@@ -14,13 +14,12 @@ def search(connection, search_value, search_type):
         result = connection.search(index='wiki', body={
             "query": {
                 "match": {
-                    "name": search_value}
+                    "name": search_value
+                }
             },
-            "highlight" : {
-                "pre_tags": ["<em>"],
-                "post_tags": ["</em>"],
+            "highlight": {
                 "fields": {
-                    "_all": {}
+                    "content": {"type": "plain"}
                 }
             }
         })
@@ -28,13 +27,12 @@ def search(connection, search_value, search_type):
         result = connection.search(index='wiki', body={
             "query": {
                 "match": {
-                    "data": search_value}
+                    "data": search_value
+                }
             },
-            "highlight" : {
-                "pre_tags": ["<em>"],
-                "post_tags": ["</em>"],
+            "highlight": {
                 "fields": {
-                    "_all": {}
+                    "content": {"type": "plain"}
                 }
             }
         })

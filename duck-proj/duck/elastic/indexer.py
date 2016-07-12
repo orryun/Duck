@@ -1,7 +1,7 @@
 import os
 import json
 import docx2txt
-
+from elastic import connect
 
 def index(connection, path='/Users/rongolberg/PycharmProjects/Duck/DuckDuckGo/wiki'):
     """
@@ -24,3 +24,11 @@ def index(connection, path='/Users/rongolberg/PycharmProjects/Duck/DuckDuckGo/wi
             print json_dict
             connection.index(index='wiki', doc_type="article", id=id, body=dic)
             print i
+
+
+def main():
+    connection = connect.connect()
+    index(connection)
+
+if __name__ == '__main__':
+    main()
