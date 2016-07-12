@@ -21,7 +21,7 @@ def search(connection, search_value, search_type):
                 "pre_tags": ["<em>"],
                 "post_tags": ["</em>"],
                 "fields": {
-                    "_all": {}
+                    "name": {}
                 }
             }
         })
@@ -36,7 +36,7 @@ def search(connection, search_value, search_type):
                 "pre_tags": ["<em>"],
                 "post_tags": ["</em>"],
                 "fields": {
-                    "_all": {}
+                    "data": {}
                 }
             }
         })
