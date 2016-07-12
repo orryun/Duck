@@ -1,5 +1,5 @@
-from duck_u04.config import PORT, IP
-from duck_u04.app import app
+from duck.config import PORT, IP
+from duck.app import app
 
 
 def run_server():
