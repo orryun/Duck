@@ -32,9 +32,9 @@ def search(connection, search_value, search_type):
         result = connection.search(index='wiki', body={"query": {"match": {"doc": search_value}}})
     return result
 
+
 def main():
     connection = connect()
-    result = search(connection, search_value, )
 
 if __name__ == '__main__':
     main()
