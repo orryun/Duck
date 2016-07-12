@@ -3,7 +3,7 @@
 
     angular
         .module('app.search', [])
-        .constant('defaultTitle', 'An elegant title...')
+        .constant('defaultTitle', 'Nino Bing')
         .controller('SearchController', SearchController);
 
     /* @ngInject */
@@ -29,6 +29,7 @@
             $scope.searchTerm = $rootScope.$stateParams.term || 'sir';
             searchService.query({'q': $scope.searchTerm}, function(data) {
                 $scope.searchResults = data;
+                console.log(data)
             });
         }
 
