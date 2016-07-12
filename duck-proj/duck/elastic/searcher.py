@@ -18,8 +18,10 @@ def search(connection, search_value, search_type):
                 }
             },
             "highlight": {
+                "pre_tags": ["<em>"],
+                "post_tags": ["</em>"],
                 "fields": {
-                    "content": {"type": "plain"}
+                    "_all": {}
                 }
             }
         })
@@ -31,8 +33,10 @@ def search(connection, search_value, search_type):
                 }
             },
             "highlight": {
+                "pre_tags": ["<em>"],
+                "post_tags": ["</em>"],
                 "fields": {
-                    "content": {"type": "plain"}
+                    "_all": {}
                 }
             }
         })
