@@ -1,30 +1,14 @@
-import os
-import json
-from elasticsearch import Elasticsearch
-import docx2txt
-
-
-def connect(host='10.0.0.2', port=9677):
-    """
-    :param host:
-    :type host:
-    :param port:
-    :type port:
-    :return:
-    :rtype:
-    """
-    es = Elasticsearch([{'host': host, 'port': port}])
-    return es
-
-
 def search(connection, search_value, search_type):
     """
-    :param connection:
-    :type connection:
-    :param search_value:
-    :type search_value:
-    :return:
-    :rtype:
+    the function will search for the provided value in the given elastic search object connection
+    :param connection: the host connection
+    :type connection: Elasticsearch object
+    :param search_value: value we want to find
+    :type search_value: str
+    :param search_type: type of search (doc\path)
+    :type search_type: str
+    :return: result
+    :rtype: JSON
     """
     if search_type == "path":
         result = connection.search(index='wiki', body={"query": {"match": {"path": search_value}}})
@@ -32,9 +16,3 @@ def search(connection, search_value, search_type):
         result = connection.search(index='wiki', body={"query": {"match": {"doc": search_value}}})
     return result
 
-
-def main():
-    connection = connect()
-
-if __name__ == '__main__':
-    main()
