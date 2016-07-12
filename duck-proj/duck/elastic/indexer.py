@@ -3,6 +3,7 @@ import json
 import docx2txt
 from elastic import connect
 
+
 def index(connection, path='/Users/rongolberg/PycharmProjects/Duck/DuckDuckGo/wiki'):
     """
     the function will index a folder of docs in the provided elastic search host ip and port
