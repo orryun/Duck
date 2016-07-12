@@ -10,9 +10,33 @@ def search(connection, search_value, search_type):
     :return: result
     :rtype: JSON
     """
-    if search_type == "path":
-        result = connection.search(index='wiki', body={"query": {"match": {"path": search_value}}})
-    if search_type == "doc":
-        result = connection.search(index='wiki', body={"query": {"match": {"doc": search_value}}})
+    if search_type == "name":
+        result = connection.search(index='wiki', body={
+            "query": {
+                "match": {
+                    "name": search_value}
+            },
+            "highlight" : {
+                "pre_tags": ["<em>"],
+                "post_tags": ["</em>"],
+                "fields": {
+                    "_all": {}
+                }
+            }
+        })
+    if search_type == "data":
+        result = connection.search(index='wiki', body={
+            "query": {
+                "match": {
+                    "data": search_value}
+            },
+            "highlight" : {
+                "pre_tags": ["<em>"],
+                "post_tags": ["</em>"],
+                "fields": {
+                    "_all": {}
+                }
+            }
+        })
     return result
 

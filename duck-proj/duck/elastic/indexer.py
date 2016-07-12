@@ -19,7 +19,7 @@ def index(connection, path='/Users/rongolberg/PycharmProjects/Duck/DuckDuckGo/wi
             id += 1
             file_path = path + "/" + i
             raw_doc = docx2txt.process(file_path)
-            dic = {'path': file_path, 'doc': raw_doc}
+            dic = {'name': file_path, 'data': raw_doc}
             json_dict = json.dumps(dic)
             print json_dict
             connection.index(index='wiki', doc_type="article", id=id, body=dic)
