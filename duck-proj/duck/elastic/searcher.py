@@ -14,9 +14,10 @@ def search(connection, search_value, search_type):
         result = connection.search(index='wiki', body={
             "query": {
                 "match": {
-                    "name": search_value}
+                    "name": search_value
+                }
             },
-            "highlight" : {
+            "highlight": {
                 "pre_tags": ["<em>"],
                 "post_tags": ["</em>"],
                 "fields": {
@@ -28,9 +29,10 @@ def search(connection, search_value, search_type):
         result = connection.search(index='wiki', body={
             "query": {
                 "match": {
-                    "data": search_value}
+                    "data": search_value
+                }
             },
-            "highlight" : {
+            "highlight": {
                 "pre_tags": ["<em>"],
                 "post_tags": ["</em>"],
                 "fields": {
