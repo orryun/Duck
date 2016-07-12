@@ -13,12 +13,6 @@
         $scope.loadFromState = loadFromState;
         $scope.search = search;
 
-        $scope.targets = [
-            {name: 'Foo'},
-            {name: 'Bar'},
-            {name: 'Buzz'}
-        ];
-
         // When the state changes, the controller will be updated and a search will take place.
         $rootScope.$on('$stateChangeSuccess', function () {
             $scope.loadFromState();
@@ -29,7 +23,6 @@
             $scope.searchTerm = $rootScope.$stateParams.term || 'sir';
             searchService.query({'q': $scope.searchTerm}, function(data) {
                 $scope.searchResults = data;
-                console.log(data)
             });
         }
 

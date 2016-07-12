@@ -43,7 +43,7 @@ def search():
 
     results = searcher.search(connection, term, 'data')
 
-    return json.dumps(map(lambda x: x['_source'], results['hits']['hits']))
+    return json.dumps(map(lambda x: {'data': x['highlight']['data'], 'name': x['_source']['name']}, results['hits']['hits']))
 
 
 def connect_to_elastic():
