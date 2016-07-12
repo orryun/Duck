@@ -50,3 +50,5 @@ docs/_build/
 # Node & Bower.
 node_modules/
 bower_components
+
+client/node_modules
