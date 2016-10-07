@@ -1,7 +1,7 @@
 from elasticsearch import Elasticsearch
 
 
-def connect(host='10.0.0.2', port=9677):
+def connect(host='10.0.0.2', port=9222):
     """
     the function will connect to a provided elastic search indexer
     :param host: ip of the elastic search host
