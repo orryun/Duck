@@ -13,7 +13,6 @@ app_views = Blueprint('app_views', __name__,
 def hello_world(path=None):
     return render_template('index.html', config=config)
 
-
 @app_views.route('/api/search', methods=['POST'])
 def search():
     connection = connect_to_elastic()
